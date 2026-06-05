@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Marianville Secondary School Design System
+   Primary: Orange | Secondary: White | Professional & Traditional
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Primary Orange Theme */
+    --background: 0 0% 100%;
+    --foreground: 20 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 15%;
+
+    /* Orange primary */
+    --primary: 24 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm cream secondary */
+    --secondary: 30 30% 96%;
+    --secondary-foreground: 20 10% 15%;
+
+    /* Muted warm gray */
+    --muted: 30 20% 94%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Orange accent */
+    --accent: 24 80% 95%;
+    --accent-foreground: 24 95% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 24 95% 50%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 24 30% 15%;
+    --sidebar-foreground: 30 20% 95%;
+    --sidebar-primary: 24 95% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 40% 25%;
+    --sidebar-accent-foreground: 30 20% 95%;
+    --sidebar-border: 24 30% 25%;
+    --sidebar-ring: 24 95% 55%;
+
+    /* Custom school colors */
+    --school-orange: 24 95% 50%;
+    --school-orange-dark: 24 95% 40%;
+    --school-orange-light: 24 80% 60%;
+    --school-cream: 40 40% 97%;
+    --school-warm-gray: 30 10% 35%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 50%) 0%, hsl(30 90% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 30% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 95% 50% / 0.15);
+    --shadow-card: 0 2px 10px -2px hsl(20 10% 15% / 0.08);
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 30 20% 95%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 20 15% 12%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 24 95% 55%;
+    --primary-foreground: 20 15% 10%;
+
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 30 20% 95%;
+
+    --muted: 20 15% 20%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 24 40% 20%;
+    --accent-foreground: 24 90% 70%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 24 95% 55%;
+
+    --sidebar-background: 20 15% 8%;
+    --sidebar-foreground: 30 20% 95%;
+    --sidebar-primary: 24 95% 55%;
+    --sidebar-primary-foreground: 20 15% 10%;
+    --sidebar-accent: 24 30% 15%;
+    --sidebar-accent-foreground: 30 20% 95%;
+    --sidebar-border: 20 15% 15%;
+    --sidebar-ring: 24 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-hero-gradient {
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* Custom font imports for professional look */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
